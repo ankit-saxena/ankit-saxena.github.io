@@ -53,6 +53,7 @@ var listener2 = function(event,data) { console.log(JSON.stringify(data));}
 // Specify an event to listen for
 branch.addListener('willShowJourney', listener);
 branch.addListener('didShowJourney', listener2);
+branch.addListener('didClickJourneyCTA', listener2);
 	
 	
 	branch.setBranchViewData({
