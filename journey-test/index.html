@@ -51,12 +51,12 @@ branch.addListener('willShowJourney',listener);
 var listener = function(event,data) { 
 	
 	console.log(JSON.stringify(data));
-	bannerId= data.banner_id;
+	var bannerId= data.banner_id;
 	
 	
 	branch.setBranchViewData({
 	
-		channel:data.banner_id,
+		channel:'Yo Yo' + bannerId,
 		tags: ['custom tag'],		
 		data:{
 			$web_only:true,
