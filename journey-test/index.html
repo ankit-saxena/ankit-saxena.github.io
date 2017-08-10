@@ -48,9 +48,12 @@
 branch.init('key_live_elfOI5wkcEhpKfGsVCrPEngpuufT2y6B');
 var bannerId;
 var listener = function(event,data) { console.log(JSON.stringify(data)); bannerId= data.banner_id; }
+var listener2 = function(event,data) { console.log(JSON.stringify(data));}
 
 // Specify an event to listen for
 branch.addListener('willShowJourney', listener);
+branch.addListener('didShowJourney', listener2);
+	
 	
 	branch.setBranchViewData({
 	
