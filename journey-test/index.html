@@ -52,10 +52,10 @@ var listener = function(event,data) {
 	
 	console.log(JSON.stringify(data));
 	var bannerId= data.banner_id;
-	
+	console.log('banner id is ' + JSON.stringify(bannerId)); 
 	branch.setBranchViewData({
 	
-		channel: bannerId,
+		channel: bannerId || 'NA',
 		tags: ['custom tag'],		
 		data:{
 			$web_only:true,
