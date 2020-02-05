@@ -1,76 +1,257 @@
-<!DOCTYPE html>
-<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
-<html lang="en-us">
+<html><script async="" src="https://cdn.branch.io/branch-latest.min.js"></script><script type="text/javascript">(function(){EventTarget.prototype.ol_originalAddEventListener=EventTarget.prototype.addEventListener,EventTarget.prototype.addEventListener=function(t,e){var n=this,r=arguments.length>2&&void 0!==arguments[2]&&arguments[2];this.ol_originalAddEventListener(t,e,r),"click"===t&&setTimeout((function(){!window.OL_NOT_LOGIN_PAGE&&n.setAttribute&&n.setAttribute("data-ol-has-click-handler","")}),0)}})("")</script><head><script>(function(){function gwyaE() {
+  //<![CDATA[
+  window.niWiYLq = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.bpAzVfh = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  let WAIT_TIME = 100;
 
-<head>
-<meta charset="utf-8">
-<title>Hello...</title>
-<style type="text/css">
-#mainContent {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: xx-large;
-	font-weight: bold;
-	background-color: #E3F0FB;
-	border-radius: 4px;
-	padding: 10px;
-	text-align: center;
-}
-.buttonStyle {
-	border-radius: 4px;
-	border: thin solid #F0E020;
-	padding: 5px;
-	background-color: #F8F094;
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-	font-weight: bold;
-	color: #663300;
-	width: 75px;
-}
-.buttonStyle:hover {
-	border: thin solid #FFCC00;
-	background-color: #FCF9D6;
-	color: #996633;
-	cursor: pointer;
-}
-.buttonStyle:active {
-	border: thin solid #99CC00;
-	background-color: #F5FFD2;
-	color: #669900;
-	cursor: pointer;
-}
-</style>
+  
+  if (!['http:', 'https:'].includes(window.location.protocol)) {
+    // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+    window.mIvED = true;
+    window.HrFXW = 38.883333;
+    window.DUHFR = -77.000;
+  }
 
-	
+  function waitGetCurrentPosition() {
+    if ((typeof window.mIvED !== 'undefined')) {
+      if (window.mIvED === true) {
+        window.sQKXJax({
+          coords: {
+            latitude: window.HrFXW,
+            longitude: window.DUHFR,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        window.niWiYLq(window.sQKXJax, window.ndSVzWo, window.NTQSE);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
 
-<script type="text/javascript">
-(function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode".split(" "), 0);
-branch.init('key_live_elfOI5wkcEhpKfGsVCrPEngpuufT2y6B');
-var listener = function(event,data) { 
-	
-	console.log(JSON.stringify(data));
-	var bannerId= data.banner_id;
-	console.log('banner id is ' + JSON.stringify(bannerId)); 
-// 	branch.setBranchViewData({
-	
-// 		channel: bannerId || 'NA',
-// 		tags: ['custom tag'],		
-// 		data:{
-// 			$web_only:true,
-// 			$journeys_title: 'Yo Test',
-// 			abba:'dabba'
-// 		}
-	
-// 	});
-	
+  function waitWatchPosition() {
+    if ((typeof window.mIvED !== 'undefined')) {
+      if (window.mIvED === true) {
+        navigator.getCurrentPosition(window.fGKcUNa, window.xPqDSHf, window.LCYIT);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        window.bpAzVfh(window.fGKcUNa, window.xPqDSHf, window.LCYIT);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    window.sQKXJax = successCallback;
+    window.ndSVzWo = errorCallback;
+    window.NTQSE = options;
+    waitGetCurrentPosition();
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    window.fGKcUNa = successCallback;
+    window.xPqDSHf = errorCallback;
+    window.LCYIT = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${gwyaE}
+          )();<\/script>`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  Object.freeze(navigator.geolocation);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'ZauKHyF':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          window.HrFXW = message.info.coords.lat;
+          window.DUHFR = message.info.coords.lon;
+          window.mIvED = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}gwyaE();})()</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <script>
+    // load Branch
+      (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
+    // init Branch
+    branch.init('key_live_hkDytPACtipny3N9XmnbZlapBDdj4WIL');
+    
+    var listener = function(event, data) { 
+      console.log(event, data); 
+      var journey_clone= document.getElementById("branch-banner-iframe")
+      var div = document.querySelector(".mydiv");
+      div.body.appendChild(journey_clone);
+      testAccess();
+    }
+    
+    // Specify an event to listen for
+    branch.addListener('didShowJourney', listener);
+    
+    document.getElementById('branch-banner-iframe').style.display='none'
+    headNode = document.getElementById('branch-banner-iframe').contentDocument.head.cloneNode(true)
+    bodyNode = document.getElementById('branch-banner-iframe').contentDocument.body.cloneNode(true)
+    ifr = document.createElement('iframe')
+    appendAt = document.getElementById('banner-hook') 
+    appendAt.appendChild(ifr)
+    html = ifr.contentWindow.document.getElementsByTagName('html')[0]
+    h = ifr.contentWindow.document.head
+    b1 = ifr.contentWindow.document.body
+    html.replaceChild(headNode,h)
+    html.replaceChild(bodyNode,b1)
+    
+    function testAccess() {
+      var remote = canAccessIFrame(document.getElementById("branch-banner-iframe"));
+      console.log("Remote iframe canAccess: ");
+      console.log(remote);
+    }
+
+    function canAccessIFrame(iframe) {
+    var html = null;
+    try { 
+      // deal with older browsers
+      var doc = iframe.contentDocument || iframe.contentWindow.document;
+      html = doc.body.innerHTML;
+    } catch(err){
+      // do nothing
+    }
+
+    return(html !== null);
+}
+
+  </script>
+<style type="text/css" id="branch-iframe-css">body { -webkit-transition: all 0.375s ease; }
+#branch-banner-iframe { box-shadow: 0 0 5px rgba(0, 0, 0, .35); width: 1px; min-width:100%; left: 0; right: 0; border: 0; height: 76px; z-index: 99999; -webkit-transition: all 0.25s ease; transition: all 00.25s ease; }
+#branch-banner-iframe { position: absolute; }
+@media only screen and (orientation: landscape) { body { margin-top: 76px; }
+#branch-banner-iframe { height: 76px; }</style><script type="text/javascript">(function r(){window.OL_NOT_LOGIN_PAGE=!0})("")</script></head>
+<body style="margin-top: 84px; transition: all 0.375s ease 0s;" class=" branch-banner-is-active">
+  <p>Hello World</p>
+    <div class="mydiv"> </div>
+  
+
+
+<script id="branch-journey-cta">function unescapeHtml(escaped_str) {
+    var div = document.createElement('div');
+    div.innerHTML = escaped_str;
+    var child = div.childNodes[0];
+    return child ? child.nodeValue : null;
+}
+
+function validateProtocol(url) {
+	var parser = document.createElement('a');
+    parser.href = url;
+    var protocol = parser.protocol.toLowerCase();
+	if ([ 'javascript:',  'vbscript:',  'data:', 'ftp:',':' , ' '].indexOf(protocol) < 0) {
+		return url;
+	}
+	return null;
+}
+
+function validate(url) {
+	var unescaped_value = unescapeHtml(url);
+	if (unescaped_value && validateProtocol(unescaped_value)) {
+		return unescaped_value;
+	}
+	return '/';
+}
+(function(root) {
+var THRESHOLD = 5*1000;
+var last_called = null;
+
+var cta = function() {
+	var now = +new Date();
+	if ((last_called !== null) && (now - last_called < THRESHOLD)) {
+		return;
+	}
+	last_called = now;
+	// intent_redirect
+	window.top.location.replace(validate("https://branchster-alternate.app.link/oQX9qviuP3?__branch_flow_type=viewapp&__branch_flow_id=753572330707790829&__branch_mobile_deepview_type=4&_branch_match_id=704331811736268333&referrer=link_click_id%253D704331811736268333%2526utm_source%253Djourneys%2526utm_campaign%253DShantanu-test-do-not-update%2526utm_medium%253Djourneys&_t=704331811736268333&adjust_campaign=Shantanu-test-do-not-update&adjust_adgroup=journeys&adjust_creative=journeys&adjust_t=abcdpp"));
 };
-// branch.addListener('willShowJourney',listener);
-	
-</script>
 
-</head>
 
-<body>
-<div id="mainContent">
-	<a href="#" onClick=branch.deepviewCta()> View in App </a>
-</div>
-</body>
-</html>
+
+// callback_set
+if (typeof branch_view_callback__1 === 'function') {
+	branch_view_callback__1(cta);
+}
+
+
+})(window);
+</script><iframe src="about:blank" scrolling="no" id="branch-banner-iframe" class="branch-animation" title="Branch Banner" aria-label="Branch Banner" style="overflow: hidden; top: 0px;"></iframe></body></html>
